@@ -150,46 +150,81 @@
     }
 
     /* FOOTER */
-    .footer{
-      border-top:1px solid var(--stroke);padding:28px 18px;background:linear-gradient(180deg,#0b0b0c,#0a0a0b)
-    }
-    .footer .wrap{max-width:1150px;margin:auto;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-    .socials{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
+.footer {
+  border-top: 1px solid var(--stroke);
+  padding: 36px 18px;
+  background: linear-gradient(180deg, #0b0b0c, #0a0a0b);
 }
-.socials .social-btn{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  padding:10px 16px;
-  border-radius:10px;
-  font-weight:500;
-  text-decoration:none;
-  color:#fff;
-  border:none;
-  background:#222;
-  transition:all .25s ease;
+
+.footer .wrap {
+  max-width: 1150px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 22px;
 }
-/* cores oficiais */
-.socials .social-btn.instagram{
-  background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+
+.footer .wrap > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.socials .social-btn.telegram{
-  background:#0088cc;
+
+/* Botões sociais */
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
 }
-.socials .social-btn.comprar{
-  background:linear-gradient(180deg,var(--gold),var(--gold-2));
-  color:#1a1407;
+
+.socials .social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: #fff;
+  border: none;
+  background: #222;
+  transition: all 0.25s ease;
 }
-.socials .social-btn.bscscan{
-  background:#121212;
-  border:1px solid var(--stroke);
+
+/* Cores oficiais */
+.socials .social-btn.instagram {
+  background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
 }
-.socials .social-btn:hover{
-  box-shadow:var(--glow);
-  transform:scale(1.05);
+.socials .social-btn.telegram {
+  background: #0088cc;
+}
+.socials .social-btn.comprar {
+  background: linear-gradient(180deg, var(--gold), var(--gold-2));
+  color: #1a1407;
+}
+.socials .social-btn.bscscan {
+  background: #121212;
+  border: 1px solid var(--stroke);
+}
+.socials .social-btn:hover {
+  box-shadow: var(--glow);
+  transform: scale(1.06);
+}
+
+/* Desktop layout */
+@media (min-width: 800px) {
+  .footer .wrap {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+  .socials {
+    justify-content: flex-end;
+  }
 }
 
     /* RESPONSIVE */
