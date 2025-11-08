@@ -3,175 +3,325 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>LEE Coin ⚡ Black Lee</title>
-
-  <meta name="description" content="LEE Coin é um meme-token inspirado no herói Black Lee. Comunidade, utilidade e poder na BNB Smart Chain." />
-  <meta name="theme-color" content="#0a0a0a" />
+  <title>LEE Coin ⚡ Black Lee | Meme-token na BNB Chain</title>
+  <meta name="description" content="LEE Coin é um meme-token inspirado no herói Black Lee. Utilidade, diversão e poder na BNB Smart Chain — entre para a comunidade!" />
   <meta property="og:title" content="LEE Coin ⚡ Black Lee" />
-  <meta property="og:image" content="logo.PNG" />
-
+  <meta property="og:description" content="Meme-token inspirado no herói Black Lee. Utilidade, diversão e poder na BNB Smart Chain." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/<SEU_USUARIO>/<SEU_REPOSITORIO>/principal/logo.PNG" />
+  <meta name="theme-color" content="#11110f" />
+  <link rel="icon" href="logo.PNG" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#000;
-      --gold:#E6B400;
-      --gold2:#ffde7a;
-      --blue:#00C2FF;
-      --muted:#9aa0a6;
-      --max:1100px;
+      --bg:#0b0b0c;
+      --panel:#121214;
+      --gold:#f4c04f;
+      --gold-2:#c89b2a;
+      --text:#e9e9ea;
+      --muted:#a7a7ab;
+      --stroke:rgba(255,255,255,.08);
+      --glow:0 0 32px rgba(244,192,79,.45);
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu;
-      background:var(--bg);color:#fff;overflow-x:hidden;
-    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font-family:Outfit,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
     a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+    img{max-width:100%;display:block}
 
-    /* NAVBAR */
+    /* NAV */
     .nav{
-      position:fixed;top:0;left:0;right:0;z-index:10;
-      background:rgba(0,0,0,.6);backdrop-filter:blur(6px);
+      position:sticky;top:0;z-index:60;
+      backdrop-filter:saturate(1.2) blur(10px);
+      background:linear-gradient(180deg,rgba(11,11,12,.8),rgba(11,11,12,.6));
+      border-bottom:1px solid var(--stroke);
     }
-    .nav__inner{display:flex;align-items:center;gap:10px;padding:14px 20px}
-    .nav img{width:36px;height:36px;border-radius:10px}
-    .brand{font-weight:700;font-size:1.1rem;letter-spacing:.4px}
+    .nav .wrap{
+      max-width:1150px;margin:auto;display:flex;align-items:center;gap:16px;
+      padding:14px 18px;
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.4px}
+    .brand img{width:34px;height:34px;filter:drop-shadow(var(--glow))}
+    .nav a.link{opacity:.9;padding:8px 12px;border-radius:12px}
+    .nav a.link:hover{background:rgba(244,192,79,.08);opacity:1}
+    .spacer{flex:1}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      border-radius:14px;padding:12px 16px;font-weight:600;
+      background:linear-gradient(180deg,var(--gold),var(--gold-2));
+      color:#1a1407;box-shadow:var(--glow), var(--shadow);border:1px solid rgba(255,208,96,.55)
+    }
+    .btn.outline{
+      background:transparent;color:var(--gold);border:1px solid rgba(244,192,79,.5);
+      box-shadow:none
+    }
+    .btn.small{padding:10px 12px;border-radius:12px;font-size:.95rem}
 
-    /* HERO BACKGROUND */
+    /* HERO */
     .hero{
-      position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;
+      position:relative;isolation:isolate;overflow:hidden;
+      border-bottom:1px solid var(--stroke);
     }
     .hero::before{
-      content:"";position:absolute;inset:0;z-index:-3;
-      background:url('black-lee.PNG') center bottom/cover no-repeat;
-      opacity:.35;filter:saturate(1.2) brightness(0.8);
-    }
-    .hero::after{
-      content:"";position:absolute;inset:0;z-index:-2;
+      content:"";position:absolute;inset:-1px;
       background:
-        radial-gradient(60% 40% at 50% 20%, rgba(230,180,0,.25), transparent 70%),
-        radial-gradient(40% 40% at 50% 80%, rgba(0,194,255,.2), transparent 70%);
-      animation:pulse 6s ease-in-out infinite;
+        radial-gradient(60% 60% at 70% 40%, rgba(244,192,79,.28), transparent 60%),
+        radial-gradient(40% 50% at 30% 70%, rgba(244,192,79,.18), transparent 70%);
+      z-index:0;pointer-events:none;filter:blur(14px);
     }
-    @keyframes pulse{0%,100%{opacity:.8}50%{opacity:1}}
-    .lightning{
-      position:absolute;inset:0;z-index:-1;
-      background-image:
-        repeating-linear-gradient(60deg, rgba(255,255,255,.08) 0 2px, transparent 2px 120px),
-        repeating-linear-gradient(-60deg, rgba(255,255,255,.06) 0 2px, transparent 2px 120px);
-      mix-blend-mode:overlay;animation:flash 5s linear infinite;
+    .hero .wrap{
+      max-width:1150px;margin:auto;padding:36px 18px 22px;display:grid;gap:28px;
+      grid-template-columns:1.05fr .95fr;align-items:center;
     }
-    @keyframes flash{
-      0%,100%{opacity:.15}50%{opacity:.4}
+    .art{
+      position:relative;aspect-ratio:3/4;border-radius:var(--radius);
+      background:
+        linear-gradient(180deg, rgba(244,192,79,.10), transparent 70%),
+        url('black-lee.PNG') center/cover no-repeat;
+      border:1px solid var(--stroke);box-shadow:var(--shadow);
+      overflow:hidden;
     }
+    .art::after{
+      content:"";position:absolute;inset:0;
+      background:radial-gradient(45% 35% at 50% 10%, rgba(244,192,79,.35), transparent 60%),
+                 radial-gradient(75% 70% at 50% 115%, rgba(0,0,0,.55), transparent 45%);
+      mix-blend-mode:screen;pointer-events:none;
+    }
+    .title{
+      font-size:clamp(2.2rem, 2.7vw + 1.4rem, 4.2rem);
+      line-height:1.08;margin:0 0 8px;font-weight:800;
+      letter-spacing:.3px;
+      text-shadow:0 0 20px rgba(244,192,79,.22);
+    }
+    .lead{color:var(--muted);font-size:1.05rem;line-height:1.7;margin:0 0 18px}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
 
-    .hero__content{padding-top:90px;padding-bottom:60px;width:100%}
-    .grid{display:grid;gap:28px;align-items:center}
-    @media(min-width:900px){.grid{grid-template-columns:1fr .9fr}}
-
-    /* CARD */
-    .card{
-      background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.1);
-      border-radius:18px;padding:28px;backdrop-filter:blur(8px);
-      box-shadow:0 0 40px rgba(0,0,0,.5), inset 0 0 25px rgba(255,255,255,.05);
+    /* SECTIONS */
+    section{scroll-margin-top:80px}
+    .section{
+      max-width:1150px;margin:0 auto;padding:56px 18px;border-top:1px solid var(--stroke)
     }
-    h1{font-size:clamp(34px,6vw,54px);line-height:1.1;margin-bottom:8px;
-      background:linear-gradient(90deg,var(--gold2),var(--gold),var(--blue));
-      -webkit-background-clip:text;color:transparent;}
-    .tag{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:6px 12px;border-radius:999px;
-      background:rgba(230,180,0,.15);border:1px solid rgba(230,180,0,.25);
-      color:var(--gold2);font-weight:600;font-size:.85rem;margin-bottom:10px;
+    .grid-2{display:grid;gap:26px;grid-template-columns:1fr 1fr}
+    .panel{
+      background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.0));
+      border:1px solid var(--stroke);border-radius:var(--radius);padding:22px 18px 18px;
+      box-shadow:var(--shadow)
     }
-    p.lead{color:#e9e9e9;margin:10px 0 18px;font-size:1.05rem}
+    .h2{font-size:1.7rem;margin:0 0 12px}
     .muted{color:var(--muted)}
+    .kv{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}
+    .kv .card{border:1px solid var(--stroke);border-radius:16px;padding:14px;background:#0f0f10}
+    .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,"Roboto Mono",monospace}
+    .tokenomics{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .tokenomics .box{
+      padding:18px;border-radius:16px;border:1px solid var(--stroke);background:#0f0f10;text-align:center
+    }
+    .tokenomics .val{font-size:1.8rem;font-weight:800;color:var(--gold);text-shadow:var(--glow)}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .step{padding:18px;border:1px solid var(--stroke);border-radius:16px;background:#0f0f10}
+    .road{display:grid;gap:14px}
+    .phase{padding:18px;border:1px solid var(--stroke);border-radius:16px;background:#0f0f10}
+    .phase h3{margin:0 0 8px}
+    .badge{
+      display:inline-block;padding:6px 10px;border-radius:999px;
+      border:1px solid rgba(244,192,79,.5);color:var(--gold);background:rgba(244,192,79,.08);
+      font-size:.85rem;font-weight:600
+    }
 
-    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
-    .btn{
-      padding:12px 18px;border-radius:12px;font-weight:700;
-      display:inline-flex;align-items:center;gap:10px;
-      transition:.25s transform,.25s box-shadow;
+    /* FOOTER */
+    .footer{
+      border-top:1px solid var(--stroke);padding:28px 18px;background:linear-gradient(180deg,#0b0b0c,#0a0a0b)
     }
-    .btn:hover{transform:translateY(-2px)}
-    .btn--gold{
-      background:linear-gradient(180deg,var(--gold2),var(--gold));color:#1a1200;
-      box-shadow:0 0 25px rgba(230,180,0,.35);
+    .footer .wrap{max-width:1150px;margin:auto;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+    .socials a{border:1px solid var(--stroke);padding:10px 12px;border-radius:12px}
+    .socials a:hover{border-color:rgba(244,192,79,.5);box-shadow:var(--glow)}
+
+    /* RESPONSIVE */
+    @media (max-width:980px){
+      .hero .wrap{grid-template-columns:1fr;gap:18px}
+      .art{order:2}
     }
-    .btn--ghost{
-      border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);
+    @media (max-width:880px){
+      .tokenomics{grid-template-columns:repeat(2,1fr)}
+      .steps{grid-template-columns:1fr}
+      .grid-2{grid-template-columns:1fr}
     }
 
-    /* SECTION */
-    section{padding:70px 0}
-    .section-title{font-size:clamp(26px,4.5vw,34px);margin:0 0 10px;text-align:center}
-    .cols{display:grid;gap:18px;max-width:var(--max);margin:0 auto}
-    @media(min-width:800px){.cols{grid-template-columns:repeat(3,1fr)}}
-    .token{
-      background:linear-gradient(180deg,rgba(0,194,255,.1),rgba(255,255,255,.03));
-      border:1px solid rgba(0,194,255,.25);padding:20px;border-radius:12px;text-align:center;
-    }
-    .token strong{color:var(--blue)}
-
-    footer{border-top:1px solid rgba(255,255,255,.08);color:var(--muted);padding:26px 0 40px;text-align:center}
+    /* Simple reveal animation */
+    .reveal{opacity:0;transform:translateY(16px);transition:.6s ease}
+    .reveal.on{opacity:1;transform:none}
   </style>
 </head>
-
 <body>
-  <div class="nav">
-    <div class="wrap nav__inner">
-      <img src="logo.PNG" alt="LEE logo" />
-      <div class="brand">LEE Coin</div>
-    </div>
-  </div>
 
-  <header class="hero" id="topo" role="banner">
-    <div class="lightning"></div>
-    <div class="wrap hero__content">
-      <div class="grid">
-        <div class="card">
-          <span class="tag">⚡ Meme-token do herói Black Lee</span>
-          <h1>O poder está em suas mãos</h1>
-          <p class="lead">
-            <strong>LEE Coin</strong> é um meme-token inspirado no herói <strong>Black Lee</strong>.
-            Criado para unir fãs de quadrinhos e recompensar quem participa da comunidade,
-            traz utilidade, diversão e poder dentro da <strong>BNB Smart Chain</strong>.
-          </p>
-          <p class="muted">Contrato:<br><code>0x336F43d8D54E7f89580A2711fd8DbC8a8bB2D7E8</code></p>
-          <div class="actions">
-            <a class="btn btn--gold" href="https://pancakeswap.finance/swap?outputCurrency=0x336F43d8D54E7f89580A2711fd8DbC8a8bB2D7E8" target="_blank">Comprar LEE</a>
-            <a class="btn btn--ghost" href="https://instagram.com/luys.silvae" target="_blank">Instagram</a>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="wrap">
+      <a class="brand" href="#top">
+        <img src="logo.PNG" alt="LEE Coin logo" />
+        <span>LEE Coin</span>
+      </a>
+      <a class="link" href="#about">Sobre</a>
+      <a class="link" href="#tokenomics">Tokenomics</a>
+      <a class="link" href="#como-comprar">Como comprar</a>
+      <a class="link" href="#roadmap">Roadmap</a>
+      <div class="spacer"></div>
+      <a class="btn small outline" href="https://bscscan.com/token/0x336F43d8D54E7f89580A2711fd8DbC8a8bB2D7E8" target="_blank" rel="noopener">BscScan</a>
+      <a class="btn small" href="https://pancakeswap.finance/swap?outputCurrency=0x336F43d8D54E7f89580A2711fd8DbC8a8bB2D7E8" target="_blank" rel="noopener">Comprar na PancakeSwap</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" class="hero">
+    <div class="wrap">
+      <div>
+        <h1 class="title">O poder do <span style="color:var(--gold)">Black Lee</span> na BNB Chain</h1>
+        <p class="lead">LEE Coin é um meme-token inspirado no herói <b>Black Lee</b>. Criado para unir fãs de quadrinhos e recompensar quem participa da comunidade, traz <b>utilidade</b>, <b>diversão</b> e <b>poder</b> dentro da BNB Smart Chain.</p>
+        <div class="cta-row">
+          <a class="btn" href="https://pancakeswap.finance/swap?outputCurrency=0x336F43d8D54E7f89580A2711fd8DbC8a8bB2D7E8" target="_blank" rel="noopener">⚡ Comprar LEE</a>
+          <a class="btn outline" href="#como-comprar">Como comprar</a>
+        </div>
+
+        <div class="panel reveal" style="margin-top:18px">
+          <div class="kv">
+            <div class="card">
+              <div class="muted">Contrato</div>
+              <div class="mono" style="word-break:break-all">0x336F43d8D54E7f89580A2711fd8DbC8a8bB2D7E8</div>
+            </div>
+            <div class="card">
+              <div class="muted">Rede</div>
+              <div>BNB Smart Chain (BEP-20)</div>
+            </div>
           </div>
         </div>
       </div>
+
+      <div class="art reveal" aria-label="Black Lee — herói dourado energizado"></div>
     </div>
   </header>
 
-  <section id="sobre">
-    <h2 class="section-title">Por que LEE Coin?</h2>
+  <!-- SOBRE -->
+  <section id="about" class="section">
+    <div class="grid-2">
+      <div class="panel reveal">
+        <h2 class="h2">A história</h2>
+        <p class="muted">Uma tempestade de energia despertou um vigilante misterioso: <b>Black Lee</b>. Ele canaliza raios dourados e protege a comunidade. LEE Coin celebra esse universo — um meme-token com alma de herói, missões e recompensas para quem está desde o início.</p>
+      </div>
+      <div class="panel reveal">
+        <h2 class="h2">Por que LEE?</h2>
+        <p class="muted">• Tema forte e reconhecível<br/>• Tokenomics simples e justa<br/>• Liquidez inicial transparente na PancakeSwap<br/>• Comunidade em crescimento e utilidades planejadas</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOKENOMICS -->
+  <section id="tokenomics" class="section">
+    <h2 class="h2">Tokenomics</h2>
+    <p class="muted">Suprimento máximo fixo e distribuição clara.</p>
+    <div class="tokenomics" style="margin-top:12px">
+      <div class="box reveal">
+        <div class="muted">Supply Máximo</div>
+        <div class="val">1.000.000.000</div>
+        <div class="muted">LEE</div>
+      </div>
+      <div class="box reveal">
+        <div class="muted">Liquidez inicial</div>
+        <div class="val">~10%</div>
+        <div class="muted">na PancakeSwap</div>
+      </div>
+      <div class="box reveal">
+        <div class="muted">Impostos</div>
+        <div class="val">0%</div>
+        <div class="muted">buy/sell (atual)</div>
+      </div>
+      <div class="box reveal">
+        <div class="muted">Contrato</div>
+        <div class="val">BEP-20</div>
+        <div class="muted">BNB Smart Chain</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO COMPRAR -->
+  <section id="como-comprar" class="section">
+    <div class="panel reveal">
+      <div style="display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap">
+        <h2 class="h2" style="margin:0">Como comprar</h2>
+        <a class="btn small" href="https://pancakeswap.finance/swap?outputCurrency=0x336F43d8D54E7f89580A2711fd8DbC8a8bB2D7E8" target="_blank" rel="noopener">Abrir PancakeSwap</a>
+      </div>
+      <div class="steps" style="margin-top:14px">
+        <div class="step">
+          <div class="badge">1</div>
+          <h3 style="margin:10px 0 6px">Conecte sua carteira</h3>
+          <p class="muted">Use MetaMask na rede <b>BNB Smart Chain</b> (Mainnet). Tenha BNB para taxas.</p>
+        </div>
+        <div class="step">
+          <div class="badge">2</div>
+          <h3 style="margin:10px 0 6px">Cole o contrato</h3>
+          <p class="muted">No campo de token, cole: <span class="mono">0x336F43d8D54E7f89580A2711fd8DbC8a8bB2D7E8</span>.</p>
+        </div>
+        <div class="step">
+          <div class="badge">3</div>
+          <h3 style="margin:10px 0 6px">Compre LEE</h3>
+          <p class="muted">Troque BNB por LEE. Ajuste slippage se necessário (0.1–0.5%).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section id="roadmap" class="section">
+    <h2 class="h2">Roadmap</h2>
+    <div class="road">
+      <div class="phase reveal">
+        <h3>Fase 1 • Lançamento</h3>
+        <p class="muted">Token live, site oficial, criação de comunidade, listagem inicial na PancakeSwap.</p>
+      </div>
+      <div class="phase reveal">
+        <h3>Fase 2 • Comunidade & Social</h3>
+        <p class="muted">Ações no Instagram, artes do Black Lee, parcerias com criadores, mini-quests.</p>
+      </div>
+      <div class="phase reveal">
+        <h3>Fase 3 • Utilidade & Expansão</h3>
+        <p class="muted">Brindes digitais, integrações e novas utilidades de comunidade (a anunciar).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
     <div class="wrap">
-      <p style="color:#ccc;text-align:center;max-width:800px;margin:0 auto;">
-        O objetivo é simples: transformar paixão por heróis em uma comunidade viva, com
-        recompensas, eventos e utilidade real. Começamos na BNB Chain pela taxa baixa e
-        liquidez do ecossistema — e vamos expandindo com a força do Black Lee.
-      </p>
+      <div style="display:flex;align-items:center;gap:10px">
+        <img src="logo.PNG" width="28" height="28" alt="LEE logo">
+        <strong>LEE Coin</strong>
+        <span class="muted">© 2025 • Projeto de comunidade</span>
+      </div>
+      <div class="socials" style="display:flex;gap:10px">
+        <a href="https://instagram.com/luys.silvae" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://pancakeswap.finance/swap?outputCurrency=0x336F43d8D54E7f89580A2711fd8DbC8a8bB2D7E8" target="_blank" rel="noopener">Comprar</a>
+        <a href="https://bscscan.com/token/0x336F43d8D54E7f89580A2711fd8DbC8a8bB2D7E8" target="_blank" rel="noopener">BscScan</a>
+      </div>
     </div>
-  </section>
-
-  <section id="tokenomics">
-    <h2 class="section-title">Tokenomics</h2>
-    <div class="cols">
-      <div class="token"><strong>Suprimento:</strong><br>1 000 000 000 LEE</div>
-      <div class="token"><strong>Liquidez inicial:</strong><br>par LEE/BNB na PancakeSwap</div>
-      <div class="token"><strong>Impostos:</strong><br>0 % compra | 0 % venda (meme puro)</div>
-    </div>
-  </section>
-
-  <footer>
-    © <span id="y"></span> LEE Coin — Black Lee ⚡
   </footer>
 
   <script>
-    document.getElementById('y').textContent=new Date().getFullYear();
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const id=a.getAttribute('href');
+        if(id.length>1){
+          e.preventDefault();
+          document.querySelector(id)?.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      });
+    });
+    // Reveal on scroll
+    const io=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} });
+    },{threshold:.12, rootMargin:'0px 0px -10% 0px'});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   </script>
 </body>
 </html>
