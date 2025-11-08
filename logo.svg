@@ -1,0 +1,14 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Dourado: #f4c04f → #c89b2a -->
+    <linearGradient id="gold" x1="16" y1="0" x2="16" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F4C04F"/>
+      <stop offset="1" stop-color="#C89B2A"/>
+    </linearGradient>
+  </defs>
+  <!-- Raio centralizado, fundo transparente -->
+  <path
+    d="M18.4 2.0 L6.6 18.6 H14.0 L12.8 30.0 L25.4 12.9 H18.2 L19.4 2.0 Z"
+    fill="url(#gold)"
+    stroke="none"/>
+</svg>
