@@ -206,6 +206,25 @@
     /* Simple reveal animation */
     .reveal{opacity:0;transform:translateY(16px);transition:.6s ease}
     .reveal.on{opacity:1;transform:none}
+    /* Correção de layout do footer */
+.footer .wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  gap:18px;
+}
+
+@media (min-width:700px){
+  .footer .wrap{
+    flex-direction:row;
+    justify-content:space-between;
+    text-align:left;
+  }
+  .socials{
+    justify-content:flex-end;
+  }
+}
   </style>
 </head>
 <body>
