@@ -5,15 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>LEE Coin ⚡ Black Lee</title>
 
-  <!-- SEO -->
   <meta name="description" content="LEE Coin é um meme-token inspirado no herói Black Lee. Comunidade, utilidade e poder na BNB Smart Chain." />
   <meta name="theme-color" content="#0a0a0a" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="LEE Coin ⚡ Black Lee" />
   <meta property="og:description" content="Meme-token inspirado no herói Black Lee, feito na BNB Smart Chain." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="logo.png" />
+  <meta property="og:image" content="logo.PNG" />
 
   <style>
     :root{
@@ -46,11 +44,10 @@
     }
     .hero__bg::before{
       content:"";position:absolute;inset:0;
-      background:url('black-lee.png') center top/cover no-repeat;
+      background:url('black-lee.PNG') center top/cover no-repeat;
       filter:saturate(1.05) contrast(1.05) brightness(0.9);
       transform:translateZ(0);
     }
-    /* vinheta e brilho */
     .hero__bg::after{
       content:"";position:absolute;inset:-20%;
       background:
@@ -130,7 +127,6 @@
       color:#fff;
     }
 
-    /* SECTIONs =================================================== */
     section{padding:70px 0}
     .section-title{font-size:clamp(26px,4.5vw,34px);margin:0 0 10px}
     .cols{display:grid;gap:18px}
@@ -147,7 +143,6 @@
       color:var(--muted);padding:26px 0 40px;text-align:center
     }
 
-    /* micro animações */
     .spark{position:relative}
     .spark::after{
       content:"";position:absolute;inset:-2px;border-radius:14px;
@@ -158,15 +153,13 @@
   </style>
 </head>
 <body>
-  <!-- NAV -->
   <div class="nav">
     <div class="wrap nav__inner">
-      <div class="logo"><img src="logo.png" alt="LEE logo" /></div>
+      <div class="logo"><img src="logo.PNG" alt="LEE logo" /></div>
       <div class="brand">LEE Coin</div>
     </div>
   </div>
 
-  <!-- HERO -->
   <header class="hero" id="topo" role="banner" aria-label="Black Lee">
     <div class="hero__bg"></div>
     <div class="wrap hero__content">
@@ -186,15 +179,13 @@
           </div>
         </div>
 
-        <!-- Logo em destaque / fallback se precisar -->
         <div class="card" style="display:flex;align-items:center;justify-content:center;min-height:260px;background:rgba(0,0,0,.35)">
-          <img src="logo.png" alt="LEE logo" style="width:min(280px,70%);height:auto;filter:drop-shadow(0 12px 35px rgba(230,180,0,.35))" />
+          <img src="logo.PNG" alt="LEE logo" style="width:min(280px,70%);height:auto;filter:drop-shadow(0 12px 35px rgba(230,180,0,.35))" />
         </div>
       </div>
     </div>
   </header>
 
-  <!-- SOBRE -->
   <section id="sobre">
     <div class="wrap">
       <h2 class="section-title">Por que LEE Coin?</h2>
@@ -206,7 +197,6 @@
     </div>
   </section>
 
-  <!-- TOKENOMICS -->
   <section id="tokenomics">
     <div class="wrap">
       <h2 class="section-title">Tokenomics</h2>
@@ -226,9 +216,7 @@
   </footer>
 
   <script>
-    // brilho sutil no hover
     function glow(e){e.currentTarget.style.setProperty('--x', e.offsetX+'px');e.currentTarget.style.setProperty('--y', e.offsetY+'px')}
-    // ano no rodapé
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
